@@ -1,4 +1,4 @@
-<body style="position: relative; margin-top: 49px; height: calc(100% - 49px); overflow-y: overlay; ">　　 
+<body style="position: relative; margin-top: 49px; height: calc(100% - 49px); overflow-y: overlay; background-image: linear-gradient(-225deg, rgb(8, 9, 17) 0%, rgb(8, 18, 23) 100%);">　　 
           <link href="/self/style.css?20181212" rel="stylesheet">
     
     <!-- <link href="/self/style.css?20181212" rel="stylesheet"> -->
@@ -144,7 +144,7 @@
                 <a class="item" href="http://222.180.160.110:6010/"><i class="cloud icon"></i> 我的云盘</a>
                 <a class="item" href="/help"><i class="help circle icon"></i> 帮助</a>
                   
-                  <a class="item" href-post="/logout?url=%2Fuser%2F202"><i class="power icon"></i>注销</a>
+                  <a class="item" href-post="/logout?url=%2Fuser%2F4891"><i class="power icon"></i>注销</a>
                 </div>
               </div>
               
@@ -171,28 +171,36 @@
     <div class="row">
         <div class="five wide column">
             <div class="ui card" style="width: 100%; " id="user_card">
-                <div class="blurring dimmable image " id="avatar_container">
+                <div class="blurring dimmable image" id="avatar_container">
 
 　　　　　　　　　　　 
-                         <img style="margin-top: -106%; " src="http://q1.qlogo.cn/g?b=qq&amp;nk=3580118762&amp;s=5">
+                         <img style="margin-top: -106%; " src="http://q1.qlogo.cn/g?b=qq&amp;nk=2762782112&amp;s=5">
                       
-                 </div>
+                 <div class="ui dimmer"></div></div>
                  
                 <!--
+                    
+                    <div class="ui dimmer transition hidden">
+                        <div class="content">
+                            <div class="center">
+                                <a class="ui inverted button" href="/user/4891/edit"><i class="edit icon"></i>修改资料</a>
+                            </div>
+                        </div>
+                    </div>
                     
                   -->
 
                 <div class="content">
                     <div class="right floated">
-                     <a class="ui button" href="/user/202/edit"><i class="edit icon"></i>修改资料</a>
+                     <a class="ui button" href="/user/4891/edit"><i class="edit icon"></i>修改资料</a>
                      </div>
-                    <div class="header">PoisoN <i class="man icon"></i></div>
+                    <div class="header">C20250128tanzhuang <i class="man icon"></i></div>
                     <div class="meta">
                         <a class="group">普通用户</a>
                     </div>
                 </div>
                 <div class="extra content">
-                    <a style="float: right; "><i class="star icon"></i>积分 1423</a>
+                    <a style="float: right; "><i class="star icon"></i>积分 1500</a>
                 </div>
             </div>
 
@@ -207,25 +215,245 @@
                                     <div class="row">
                                         <div class="column">
                                            <h4 class="ui top attached block header">用户名</h4>
-                                           <div class="ui bottom attached segment">PoisoN</div>
+                                           <div class="ui bottom attached segment">C20250128tanzhuang</div>
                                         </div>
                                     </div>
+                                    
+                                      <div class="row">
+                                          <div class="column">
+                                              <h4 class="ui top attached block header">Email</h4>
+                                              <div class="ui bottom attached segment">45684566@qq.com</div>
+                                          </div>
+                                      </div>
                                     
                                     <div class="row">
                                         <div class="column">
                                             <h4 class="ui top attached block header">个性签名</h4>
-                                            <div class="ui bottom attached segment"><i class="icon spinner"></i>
+                                            <div class="ui bottom attached segment"><span class="status compile_error"><i class="icon clock"></i> "成为不了一个学识渊博的人，也至少，不要成为一个贫瘠的人吧"</span>
 
-菜..
+<script>
+  document.body.style.backgroundImage="linear-gradient(-225deg, #080911 0%, #081217 100%)";
+  </script>
+<script>
+  class Circle {
+     constructor({ origin, speed, color, angle, context }) {
+         this.origin = origin
+         this.position = { ...this.origin }
+         this.color = color
+         this.speed = speed
+         this.angle = angle
+         this.context = context
+         this.renderCount = 0
+     }
+  
+     draw() {
+         this.context.fillStyle = this.color
+         this.context.beginPath()
+         this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 6)
+         this.context.fill()
+     }
+  
+     move() {
+         this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x
+         this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.5)
+         this.renderCount++
+     }
+  }
+  
+  class Boom {
+     constructor({ origin, context, circleCount = 10, area }) {
+         this.origin = origin
+         this.context = context
+         this.circleCount = circleCount
+         this.area = area
+         this.stop = false
+         this.circles = []
+     }
+  
+     randomArray(range) {
+         const length = range.length
+         const randomIndex = Math.floor(length * Math.random())
+         return range[randomIndex]
+     }
+  
+     randomColor() {
+         const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+         return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)
+     }
+  
+     randomRange(start, end) {
+         return (end - start) * Math.random() + start
+     }
+  
+     init() {
+         for (let i = 0; i < this.circleCount; i++) {
+             const circle = new Circle({
+                 context: this.context,
+                 origin: this.origin,
+                 color: this.randomColor(),
+                 angle: this.randomRange(Math.PI - 1, Math.PI + 1),
+                 speed: this.randomRange(1, 6)
+             })
+             this.circles.push(circle)
+         }
+     }
+  
+     move() {
+         this.circles.forEach((circle, index) => {
+             if (circle.position.x > this.area.width || circle.position.y > this.area.height) {
+                 return this.circles.splice(index, 1)
+             }
+             circle.move()
+         })
+         if (this.circles.length == 0) {
+             this.stop = true
+         }
+     }
+  
+     draw() {
+         this.circles.forEach(circle => circle.draw())
+     }
+  }
+  
+  class CursorSpecialEffects {
+     constructor() {
+         this.computerCanvas = document.createElement('canvas')
+         this.renderCanvas = document.createElement('canvas')
+  
+         this.computerContext = this.computerCanvas.getContext('2d')
+         this.renderContext = this.renderCanvas.getContext('2d')
+  
+         this.globalWidth = window.innerWidth
+         this.globalHeight = window.innerHeight
+  
+         this.booms = []
+         this.running = false
+     }
+  
+     handleMouseDown(e) {
+         const boom = new Boom({
+             origin: { x: e.clientX, y: e.clientY },
+             context: this.computerContext,
+             area: {
+                 width: this.globalWidth,
+                 height: this.globalHeight
+             }
+         })
+         boom.init()
+         this.booms.push(boom)
+         this.running || this.run()
+     }
+  
+     handlePageHide() {
+         this.booms = []
+         this.running = false
+     }
+  
+     init() {
+         const style = this.renderCanvas.style
+         style.position = 'fixed'
+         style.top = style.left = 0
+         style.zIndex = '999999999999999999999999999999999999999999'
+         style.pointerEvents = 'none'
+  
+         style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
+         style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
+  
+         document.body.append(this.renderCanvas)
+  
+         window.addEventListener('mousedown', this.handleMouseDown.bind(this))
+         window.addEventListener('pagehide', this.handlePageHide.bind(this))
+     }
+  
+     run() {
+         this.running = true
+         if (this.booms.length == 0) {
+             return this.running = false
+         }
+  
+         requestAnimationFrame(this.run.bind(this))
+  
+         this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+         this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+  
+         this.booms.forEach((boom, index) => {
+             if (boom.stop) {
+                 return this.booms.splice(index, 1)
+             }
+             boom.move()
+             boom.draw()
+         })
+         this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
+     }
+  }
+  
+  const cursorSpecialEffects = new CursorSpecialEffects()
+  cursorSpecialEffects.init()
+  
+  </script>
+  <script>
+      !function(){
+         function n(n,e,t){
+             return n.getAttribute(e)||t
+         }
+         function e(n){
+             return document.getElementsByTagName(n)
+         }
+         function t(){
+             var t=e("script"),o=t.length,i=t[o-1];
+             return{
+                 l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),
+                 c:n(i,"color","255,255,255"),n:n(i,"count",130)
+             }
+         }
+         function o(){
+             a=m.width=window.innerWidth||
+             document.documentElement.clientWidth||
+             document.body.clientWidth,c=m.height=window.innerHeight||
+             document.documentElement.clientHeight||document.body.clientHeight
+         }
+         function i()
+         {
+             r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,window.onmousemove=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();
+      
+      </script>
+     
+       <script>
+       //按键触发
+       document.onkeydown = function(){
+          //禁止ctrl+u
+          if (event.ctrlKey && window.event.keyCode==85){
+          return false;
+          }
+          //禁止 F12
+          if (window.event && window.event.keyCode == 123) {
+          event.keyCode = 0;
+          event.returnValue = false;
+          }
+          }
+          //网站禁止右键
+          document.body.oncontextmenu = function() {
+          self.event.returnValue=false
+       }; 
+       </script>
 
-<a class="ui grey label" href="https://www.cnblogs.com/a-Lin-qaq/"> My Blog </a> …… <a class="ui mini black label" href="https://oi-wiki.org//"> 好东西 </a>  <a class="ui mini black label" href="https://csacademy.com/app/graph_editor/"> 图论神器 </a></div>
+
+<div id="blogTitle"> 经验是由痛苦中粹取出来的</div>
+ 
+<p> </p>
+ 
+  <script language="javascript">
+_VC_DocumentTitles = new Array('生活的理想，就是为了理想的生活', '好好扮演自己的角色，做自己该做的事', '人生的真理，只是藏在平淡无味之中', '想像力比知识更重要', '每一种创伤，都是一种成熟', '激情是成功的必要前提!!', '记住该访住的事，忘掉该忘掉的人', '越学习,就越发现自己无知', '凡事皆有代价，快乐的代价便是痛苦','学习是一种乐趣','年轻就是无限的可能','追求自我的突破','记住该记住的 忘记该忘记的','只要开始，虽晚不迟！','有些事情本身我们无法控制，只好控制自己。',' 经验是由痛苦中粹取出来的','明天的希望，让我们忘了今天的痛苦','发光并非太阳的专利，你也可以发光','你可以用爱得到全世界，你也可以用恨失去全世界','年轻是我们唯一拥有权利去编织梦想的时光','人的价值，在遭受诱惑的一瞬间被决定','学会偷懒，并懒出境界是提高工作效率最有效的方法！',' 少一点预设的期待，那份对人的关怀会更自在','人只要不失去方向，就不会失去自己 ');
+_VC_DocumentTitleId = Math.floor(Math.random()*_VC_DocumentTitles.length);
+document.getElementById("blogTitle").innerText =_VC_DocumentTitles[_VC_DocumentTitleId];
+  </script></div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="column">
                                             <h4 class="ui top attached block header">注册于</h4>
                                             <div class="ui bottom attached segment">
-                                                2019-10-05 18:37:38
+                                                2022-09-24 10:27:42
                                             </div>
                                         </div>
                                     </div>
@@ -274,43 +502,23 @@
                                 <tbody>
                                     
                                     <tr>
-                                        <td><a href="/article/1108">旅行家的预算【题解】</a></td>
-                                        <td>2020-02-02 11:46:41</td>
+                                        <td><a href="/article/10805">超新星计划-选择结构篇 v_1.3.3</a></td>
+                                        <td>2022-11-06 10:46:55</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td><a href="/article/1165">OJ304 中位数</a></td>
-                                        <td>2020-02-12 23:39:26</td>
+                                        <td><a href="/article/10869">超新星计划-循环结构篇 v_1.3.5</a></td>
+                                        <td>2022-11-09 9:22:38</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td><a href="/article/1173">2.13  &lt;每日一练&gt;</a></td>
-                                        <td>2020-02-13 20:11:50</td>
+                                        <td><a href="/article/11034">超新星计划-目录及答疑(附更新日志)</a></td>
+                                        <td>2022-11-20 18:16:47</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td><a href="/article/1663">CF149D Coloring Brackets</a></td>
-                                        <td>2020-07-19 21:22:27</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><a href="/article/1706">数三角</a></td>
-                                        <td>2020-07-25 22:18:03</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><a href="/article/1729">树状数组总结</a></td>
-                                        <td>2020-07-27 22:02:46</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><a href="/article/1956">快餐店 题解</a></td>
-                                        <td>2020-08-22 19:49:38</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><a href="/article/6221">「二项式定理与组合恒等式」の 一些练习</a></td>
-                                        <td>2021-11-15 22:16:43</td>
+                                        <td><a href="/article/11038">超新星计划-排序专题[征稿中] v_1.2.9</a></td>
+                                        <td>2022-11-21 12:23:38</td>
                                     </tr>
                                     
                                 </tbody>
@@ -322,6 +530,10 @@
               -->
 <script>
 $(function () {
+
+  $('#user_card .image').dimmer({
+    on: 'hover'
+  });
 
 
   var pie = new Chart(document.getElementById('pie_chart').getContext('2d'), {
@@ -405,4 +617,4 @@ $(function () {
 
 
 
-</div></body>
+</div><canvas width="1280" height="577" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas><canvas id="c_n8" width="725" height="577" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas></body>
