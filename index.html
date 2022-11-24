@@ -1,0 +1,408 @@
+<body style="position: relative; margin-top: 49px; height: calc(100% - 49px); overflow-y: overlay; ">　　 
+          <link href="/self/style.css?20181212" rel="stylesheet">
+    
+    <!-- <link href="/self/style.css?20181212" rel="stylesheet"> -->
+    <link href="/cdnjs/morris.js/0.5.1/morris.css" rel="stylesheet">
+    <script src="/markdown-palettes/sweetalert.min.js"></script>
+  　<!--
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert/dist/sweetalert.min.js"></script>
+    -->
+
+    
+      <link href="/google-fonts/fira-mono.css" rel="stylesheet">
+      <link href="/google-fonts/lato.css" rel="stylesheet">
+      <link href="/google-fonts/open-sans.css" rel="stylesheet">
+      <link href="/google-fonts/exo-2.css" rel="stylesheet">
+    
+
+　　 
+    <script type="text/javascript" src="./cssrefresh/cssrefresh.js"></script>
+    <script data-cfasync="false" src="/cdnjs/jquery/3.3.1/jquery.min.js"></script>
+    
+
+ 
+
+
+    <div class="ui fixed borderless menu" style="position: fixed; height: 49px; ">
+
+    
+        <div class="ui container">
+            
+            <a href="/"><img src="/logo/login_logo.png" style="width: 45px; height: 45px; "></a>
+            
+            <a style="font-weight:bold;" class="item" href="/"><i class="home icon"></i> 首页</a>
+            <a style="font-weight:bold;" class="item" href="/problems"><i class="list icon"></i> 题库</a>
+            <a style="font-weight:bold;" class="item" href="/schedules"><i class="book icon"></i> 题单</a>
+	          <a style="font-weight:bold;" class="item" href="/training"><i class="pencil icon"></i> 训练</a>
+            <a style="font-weight:bold;" class="item" href="/contests"><i class="calendar icon"></i> 比赛</a>
+            <a style="font-weight:bold;" class="item" href="/corrections"><i class="check icon"></i> 订正</a>
+            <a style="font-weight:bold;" class="item" href="/submissions"><i class="tasks icon"></i> 评测</a>
+            <a style="font-weight:bold;" class="item" href="/ranklist"><i class="signal icon"></i> 排名</a>
+	          <a style="font-weight:bold;" class="item" href="/discussion/global"><i class="comments icon"></i> 讨论</a>
+            <a style="font-weight:bold;" class="item" href="/teachers"><i class="box icon"></i> 师者</a>
+ 
+              　　　　　<a style="font-weight:bold;" class="item" href="/calendar"><i class="calendar alternate icon"></i>近期比赛</a>
+ 
+      <a style="font-weight:bold;" class="item" id="theme-mode" onclick="setDark()"><i class="moon icon"></i>主题</a>
+              <script>
+                localStorage.getItem("dark-mode") && setDark();
+
+                function setLight() {
+                  $("#dark-mode").remove();
+                  $("#theme-mode")
+                    .html('<i class="moon icon"></i>暗色')
+                    .attr("onclick", "setDark()");
+                  localStorage.removeItem("dark-mode");
+                }
+
+                function setDark() {
+                  $("<link>").attr({
+                    rel: "stylesheet",
+                    type: "text/css",
+                    href: "/self/dark3.css",
+                    id: "dark-mode",
+                  }).appendTo("head");
+                  $("#theme-mode")
+                    .html('<i class="sun icon"></i>明亮')
+                    .attr("onclick", "setLight()");
+                  localStorage.setItem("dark-mode", "1");
+                }
+              </script>
+
+
+
+<!--
+ <a class="item" href="/lists"><i class="check icon"></i> 题单 </a>
+  <a class="item" href="/labels"><i class="book icon"></i> 标签 </a>
+-->
+  </div>	 
+
+
+
+      <style>
+    .ui.vertical.icon.menu .item .sidebar-item-text {
+      display: none;
+    }
+    .ui.vertical.icon.menu {
+      width: 48.52px;
+      transition: width .15s;
+      /* transition: width .25s; */
+    }
+    .ui.vertical.icon.menu {
+      overflow: hidden;
+    }
+    .ui.vertical.icon.menu.spreaded .item {
+      text-align: left;
+      width: 200px;
+      line-height: 16px;
+    }
+    .ui.vertical.icon.menu.spreaded .item i.icon {
+      display: inline-block;
+      margin-right: 20px;
+      text-align: center;
+      height: 16px;
+      font-size: 16px;
+      width: 16.52px;
+    }
+    .ui.vertical.icon.menu.spreaded .item .sidebar-item-text {
+      display: inline;
+    }
+  </style>
+  <script>
+    $('#sidebar').hover(function() {
+      $(this).css('width', '150px')
+    }, function() {
+      $(this).css('width', '50px')
+    })
+  </script>
+            
+            
+            <div class="right menu">
+              
+              <a href="/user/4891" style="color: inherit; ">
+              </a><div class="ui simple dropdown item"><a href="/user/4891" style="color: inherit; ">
+              <p style="margin-bottom:-5px;">
+              <img style="border-radius:50%;vertical-align:middle;margin-bottom:2px;margin-right:2px;" src="http://q1.qlogo.cn/g?b=qq&amp;nk=2762782112&amp;s=100" width="30" height="30">
+                C20250128tanzhuang <i style="font-weight:bold;" class="dropdown icon"></i>
+                </p></a><div class="menu"><a href="/user/4891" style="color: inherit; ">
+                </a><a class="item" href="/user/4891/edit"><i class="edit icon"></i>修改资料</a>
+	          <a class="item" href="/problems/user/4891"><i class="book icon"></i>我的题目</a>
+		  <a class="item" href="/contests_own"><i class="calendar icon"></i>我的比赛</a>
+             	  <a class="item" href="/exercises"><i class="trophy icon"></i>练习</a>
+                <a class="item" href="/forecast"><i class="record icon"></i>跟踪</a>
+                <a class="item" href="/team_my"><i class="users icon"></i>团队</a>
+                <a class="item" href="/teachers/my"><i class="id card icon"></i> 我的老师</a>
+                
+                    <a class="item" href="/teacher/4891"><i class="child icon"></i> 我的学生</a>
+                
+                <a class="item" href="/chat"><i class="chat icon"></i> Chat</a>
+		            <a class="item" href="/discussions_own"><i class="comments icon"></i>我的博客</a>
+                <a class="item" href="/files"><i class="file icon"></i>我的空间</a>
+                <a class="item" href="/people"><i class="users icon"></i> 名人堂</a>
+                <a class="item" href="/notepad"><i class="beer icon"></i> Markdown</a>
+                <a class="item" href="http://61.186.173.89:2019/"><i class="file image icon"></i> 图床</a>
+                <a class="item" href="http://222.180.160.110:6010/"><i class="cloud icon"></i> 我的云盘</a>
+                <a class="item" href="/help"><i class="help circle icon"></i> 帮助</a>
+                  
+                  <a class="item" href-post="/logout?url=%2Fuser%2F202"><i class="power icon"></i>注销</a>
+                </div>
+              </div>
+              
+                
+            </div>
+        </div>
+    
+
+  
+    
+    <div style="margin-top: 28px;">
+
+<div class="ui main container">
+
+<style>
+#avatar_container:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+</style>
+<div class="padding">
+<div class="ui grid">
+    <div class="row">
+        <div class="five wide column">
+            <div class="ui card" style="width: 100%; " id="user_card">
+                <div class="blurring dimmable image " id="avatar_container">
+
+　　　　　　　　　　　 
+                         <img style="margin-top: -106%; " src="http://q1.qlogo.cn/g?b=qq&amp;nk=3580118762&amp;s=5">
+                      
+                 </div>
+                 
+                <!--
+                    
+                  -->
+
+                <div class="content">
+                    <div class="right floated">
+                     <a class="ui button" href="/user/202/edit"><i class="edit icon"></i>修改资料</a>
+                     </div>
+                    <div class="header">PoisoN <i class="man icon"></i></div>
+                    <div class="meta">
+                        <a class="group">普通用户</a>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a style="float: right; "><i class="star icon"></i>积分 1423</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="eleven wide column">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="sixteen wide column">
+                        <div class="ui grid">
+                            <div class="eight wide column">
+                                <div class="ui grid">
+                                    <div class="row">
+                                        <div class="column">
+                                           <h4 class="ui top attached block header">用户名</h4>
+                                           <div class="ui bottom attached segment">PoisoN</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="column">
+                                            <h4 class="ui top attached block header">个性签名</h4>
+                                            <div class="ui bottom attached segment"><i class="icon spinner"></i>
+
+菜..
+
+<a class="ui grey label" href="https://www.cnblogs.com/a-Lin-qaq/"> My Blog </a> …… <a class="ui mini black label" href="https://oi-wiki.org//"> 好东西 </a>  <a class="ui mini black label" href="https://csacademy.com/app/graph_editor/"> 图论神器 </a></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <h4 class="ui top attached block header">注册于</h4>
+                                            <div class="ui bottom attached segment">
+                                                2019-10-05 18:37:38
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="eight wide column">
+                                <div class="ui grid">
+                                  <div class="row">
+                                      <div class="column">
+                                          <h4 class="ui top attached block header">统计</h4>
+                                          <div class="ui bottom attached segment">
+                                            <div id="pie_chart_legend"><ul style="list-style: none; padding-left: 20px; margin-top: 0; " class="0-legend"><li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: #66dd66; "></span>Accepted</li><li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: #ff6384; "></span>Wrong Answer</li><li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: darkorchid; "></span>Runtime Error</li><li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: #ffce56; "></span>Time Limit Exceeded</li><li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: #00b5ad; "></span>Memory Limit Exceeded</li><li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: #35a0e8; "></span>Compile Error</li></ul></div>
+                                            <div style="width: 260px; height: 260px; margin-left: 33.5px; "><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div><canvas style="width: 260px; height: 260px; display: block;" id="pie_chart" width="390" height="390" class="chartjs-render-monitor"></canvas></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+               
+
+
+        </div>
+    </div>
+</div>
+</div>
+<!--
+ <div class="row">
+                    <div class="column">
+                        <h4 class="ui top attached block header">帖子</h4>
+                        <div class="ui bottom attached segment">
+                            
+                            <table class="ui basic table">
+                                <thead>
+                                    <tr>
+                                        <th>标题</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1108">旅行家的预算【题解】</a></td>
+                                        <td>2020-02-02 11:46:41</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1165">OJ304 中位数</a></td>
+                                        <td>2020-02-12 23:39:26</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1173">2.13  &lt;每日一练&gt;</a></td>
+                                        <td>2020-02-13 20:11:50</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1663">CF149D Coloring Brackets</a></td>
+                                        <td>2020-07-19 21:22:27</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1706">数三角</a></td>
+                                        <td>2020-07-25 22:18:03</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1729">树状数组总结</a></td>
+                                        <td>2020-07-27 22:02:46</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/1956">快餐店 题解</a></td>
+                                        <td>2020-08-22 19:49:38</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><a href="/article/6221">「二项式定理与组合恒等式」の 一些练习</a></td>
+                                        <td>2021-11-15 22:16:43</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+              -->
+<script>
+$(function () {
+
+
+  var pie = new Chart(document.getElementById('pie_chart').getContext('2d'), {
+    aspectRatio: 1,
+    type: 'pie',
+    data: {
+      datasets: [
+        {
+          data: [
+            ,
+            ,
+            ,
+            ,
+            ,
+            ,
+          ],
+          backgroundColor: [
+            "#66dd66",
+            "#ff6384",
+            "darkorchid",
+            "#ffce56",
+            "#00b5ad",
+            "#35a0e8"
+          ]
+        }
+      ],
+      labels: [
+        "Accepted",
+        "Wrong Answer",
+        "Runtime Error",
+        "Time Limit Exceeded",
+        "Memory Limit Exceeded",
+        "Compile Error"
+      ]
+    },
+    options: {
+      responsive: true,
+      legend: {
+        display: false
+      },
+      legendCallback: function (chart) {
+  			var text = [];
+  			text.push('<ul style="list-style: none; padding-left: 20px; margin-top: 0; " class="' + chart.id + '-legend">');
+
+  			var data = chart.data;
+  			var datasets = data.datasets;
+  			var labels = data.labels;
+
+  			if (datasets.length) {
+  				for (var i = 0; i < datasets[0].data.length; ++i) {
+  					text.push('<li style="font-size: 12px; width: 50%; display: inline-block; color: #666; "><span style="width: 10px; height: 10px; display: inline-block; border-radius: 50%; margin-right: 5px; background-color: ' + datasets[0].backgroundColor[i] + '; "></span>');
+  					if (labels[i]) {
+  						text.push(labels[i]);
+  					}
+  					text.push('</li>');
+  				}
+  			}
+
+  			text.push('</ul>');
+  			return text.join('');
+  		}
+    },
+  });
+
+  document.getElementById('pie_chart_legend').innerHTML = pie.generateLegend();
+});
+</script>
+</div>
+    <div class="ui vertical footer segment" style="margin-top: 15px; ">
+      <div class="ui center aligned container">
+        <span style="color: #999;">重庆八中OJ Powered by <a href="https://github.com/syzoj/syzoj" target="_blank">SYZOJ</a></span>
+      </div>
+      <div class="ui center aligned container">
+        <span style="color: #999;">　DIY by LF lifan19930501@163.com　</span>
+      </div>
+    </div>
+</div>
+<script data-cfasync="false" src="/cdnjs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="/cdnjs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+<script src="/self/script.js?20170710"></script>
+
+
+
+</div></body>
